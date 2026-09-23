@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Registro</title>
+    <link rel="stylesheet" href="formulario.css">
+</head>
+
+<body>
+<div class="caja2">
+    <form id="userForm" onsubmit="crearUsuario(event)">
+        <h2>Crear Cuenta</h2>
+        <p>Regístrate para continuar</p>
+
+        <select id="TipoDocumento" name="tipoDocumento" required>
+            <option value="">Tipo de Documento</option>
+            <option value="C.C">Cédula</option>
+            <option value="C.E">Cédula Extranjería</option>
+        </select>
+
+        <input type="number" id="numDocumento" name="numDocumento" required placeholder="Número de Documento">
+        <input type="text" id="nombreCompleto" name="nombreCompleto" required placeholder="Nombre Completo">
+        <input type="number" id="telefono" name="telefono" required placeholder="Teléfono">
+        <input type="email" id="email" name="email" required placeholder="Email">
+        <input type="text" id="direccion" name="direccion" required placeholder="Dirección">
+
+        <!-- Nombre de ID actualizado a contrasenia (sin 'ñ') -->
+        <input type="password" id="contrasenia" name="contrasenia" required placeholder="Contraseña">
+
+        <!-- Campos ocultos con valores por defecto para no romper el 'NOT NULL' de SQL -->
+        <input type="hidden" id="estado" name="estado" value="Activo">
+        <input type="hidden" id="cargo" name="cargo" value="Cliente">
+
+        <select id="genero" name="genero" required>
+            <option value="">Género</option>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+            <option value="otro">Otro</option>
+        </select>
+
+        <select id="idRolFK" name="idRolFK" required>
+            <option value="" disabled selected>Seleccione un rol...</option>
+            <option value="1">Administrador</option>
+            <option value="2">Empleado</option>
+            <option value="3">Cliente</option>
+        </select>
+
+        <button type="submit">Registrarse</button>
+    </form>
+
+    <a href="../visual/login.php">
+        ¿Ya tienes cuenta? Inicia sesión
+    </a>
+
+    <script src="Usuarios.js"></script>
+</div>
+</body>
+</html>

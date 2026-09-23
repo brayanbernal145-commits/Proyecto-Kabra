@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Usuario - D'juan Carlos Peluqueria</title>
+    <link rel="stylesheet" href="crearU.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="menu-btn sidebar-btn" id="sidebar-btn">
+    <i class="bx bx-menu"></i>
+    <i class="bx bx-x"></i>
+</div>
+<div class="sidebar" id="sidebar">
+    <div class="header">
+        <div class="menu-btn" id="menu-btn">
+            <i class='bx bx-chevron-left'></i>
+        </div>
+    </div>
+    <div class="brand">
+        <img src="bostraap/icons/logo.jpeg" alt="logo">
+        <span>D'juan Carlos Peluqueria</span>
+    </div>
+    <div class="menu_c">
+        <ul class="menu">
+            <li class="menu-item menu-item-static">
+                <a href="Administrador.html" class="menu-link">
+                    <i class='bx bx-home'></i>
+                    <span>Perfil</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-dropdown active">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-shopping-bag'></i>
+                    <span>Usuarios</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li> <a class="sub-menu-link" href="ListadoU.html">Listado de usuarios</a></li>
+                    <li> <a class="sub-menu-link active" href="crearU.html">Crear un usuario</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-shopping-bag'></i>
+                    <span>Servicios</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li><a class="sub-menu-link" href="ListadoSer.html">Listado de servicios</a></li>
+                    <li><a class="sub-menu-link" href="CrearSer.html">Crear servicios</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-file-blank'></i>
+                    <span>Citas</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li> <a class="sub-menu-link" href="listadoC.html">Listado de citas</a></li>
+                    <li> <a class="sub-menu-link" href="crearC.html">Crear citas</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-file-blank'></i>
+                    <span>Insumos</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li> <a class="sub-menu-link" href="ListadoI.html">Listado de insumos</a></li>
+                    <li> <a class="sub-menu-link" href="CrearI.html">Crear insumos</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="footer">
+        <ul class="menu">
+            <li class="menu-item menu-item-static">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-bell'></i>
+                    <span>Notificaciones</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-static">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-cog'></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
+        <div class="user">
+            <div class="user-img">
+                <img src="bostraap/icons/Starter pfp.jpg" alt="user">
+            </div>
+            <div class="user-info">
+                <span class="nombre">Brayan</span>
+                <span class="email">brayan@example.com</span>
+            </div>
+            <div class="user-icon">
+                <a href="login.html">
+                    <i class='bx bx-exit'></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main>
+    <div class="dashboard-grid">
+        <div class="caja formulario-wrapper">
+            <div class="formulario-container">
+                <h2>Crear Usuario</h2>
+
+                <!-- Se usa id="userForm" para conectarlo con el evento submit en JS -->
+                <form onsubmit="crearUsuario(event)" id="userForm">
+
+                    <!-- Campos ocultos requeridos por la API -->
+                    <input type="hidden" id="estado" value="Activo">
+                    <input type="hidden" id="cargo" value="Cliente">
+
+                    <div class="campo">
+                        <select id="TipoDocumento" name="tipoDocumento" required>
+                            <option value="" disabled selected>Seleccione su tipo de documento...</option>
+                            <option value="CC">CC</option>
+                            <option value="CE">CE</option>
+                            <option value="TI">TI</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <input type="number" id="numDocumento" name="numDocumento" required placeholder="Numero de Documento">
+                    </div>
+
+                    <div class="campo">
+                        <input type="text" id="nombreCompleto" name="nombreCompleto" required placeholder="Nombre Completo">
+                    </div>
+
+                    <div class="campo">
+                        <input type="number" id="telefono" name="telefono" required placeholder="Telefono">
+                    </div>
+
+                    <div class="campo">
+                        <input type="email" id="email" name="email" required placeholder="Correo Electronico">
+                    </div>
+
+                    <div class="campo">
+                        <input type="text" id="direccion" name="direccion" required placeholder="direccion">
+                    </div>
+
+                    <div class="campo">
+                        <select id="genero" name="genero" required>
+                            <option value="" disabled selected>Seleccione su genero...</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <input type="password" id="contrasenia" name="contrasenia" required placeholder="Asigne una contraseña segura">
+                    </div>
+
+                    <div class="campo">
+                        <select id="idRolFK" name="idRolFK" required>
+                            <option value="" disabled selected>Seleccione un Rol...</option>
+                            <option value="1">Administrador</option>
+                            <option value="2">Empleado</option>
+                            <option value="3">Cliente</option>
+                        </select>
+                    </div>
+
+                    <div class="botones">
+                        <button type="submit" class="btn-guardar">
+                            Crear Usuario
+                        </button>
+
+                        <button type="reset" class="btn-limpiar">
+                            Limpiar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="instrucciones-wrapper">
+            <!-- Botón para activar el desplegable -->
+            <button type="button" id="btnInstrucciones" class="btn-instrucciones">
+                <i class='bx bx-help-circle'></i> Modo De Uso
+                <i class='bx bx-chevron-down' id="iconoFlecha"></i>
+            </button>
+
+            <!-- Contenido oculto/desplegable -->
+            <div class="instrucciones-contenido" id="contenidoInstrucciones">
+                <ul>
+                    <li>Seleccione el tipo de identificación legal.</li>
+                    <li>Ingrese el número de documento sin puntos ni comas.</li>
+                    <li>Escriba el nombre completo del usuario.</li>
+                    <li>Registre un teléfono de contacto válido (10 dígitos).</li>
+                    <li>Asigne un correo único para su inicio de sesión.</li>
+                    <li>Ingrese la dirección de residencia actual.</li>
+                    <li>Asigne una clave inicial y defina el rol del usuario en el sistema.</li>
+                    <li>Haga clic en 'Crear Usuario' para guardar el registro.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="UsuarioC.js"></script>
+</body>
+</html>
